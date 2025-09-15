@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Environment & secrets
+.env
+*.env
+
+# OS files
+.DS_Store
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# IDE/editor configs
+.vscode/
+.idea/
+
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docker
+*.pid
+*.seed
+*.tar
+
+
