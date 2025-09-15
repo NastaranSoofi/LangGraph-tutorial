@@ -1,0 +1,15 @@
+Enter a message: I'm sad
+
+Assistant: It takes a lot of courage to acknowledge and share your sadness. I'm here to listen and support you without judgment.
+Can you tell me more about what's making you feel sad? Is it something that's happening in your life right now, or is it a feeling that's been building up for a while?
+Sometimes, talking about what's on our minds can help us process our emotions and gain some clarity. I'm here to listen and offer support, not to try to fix everything or provide answers. Would you like to talk about what's been weighing on your heart?
+{'node': 'therapist', 'input_tokens': 83, 'output_tokens': 117, 'total_tokens': 200, 'total_duration_ns': 3559381083, 'eval_count': 117, 'prompt_eval_count': 83, 'model': 'llama3.2:3b'}
+
+
+Enter a message: Who invented wheel?
+
+Assistant: The origin of the wheel is unknown and its exact inventor cannot be attributed to a specific person. Archaeological evidence suggests that the wheel was first used around 4000-3500 BCE (Before Common Era) by the Sumerians in Mesopotamia (modern-day Iraq).
+{'node': 'logical', 'input_tokens': 75, 'output_tokens': 58, 'total_tokens': 133, 'total_duration_ns': 1835471750, 'eval_count': 58, 'prompt_eval_count': 75, 'model': 'llama3.2:3b'}
+
+Enter a message: exit
+Goodbye

@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-phoenix}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-phoenix}
+      POSTGRES_DB: ${POSTGRES_DB:-phoenix}
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-phoenix} -d ${POSTGRES_DB:-phoenix}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  phoenix:
+    image: arizephoenix/phoenix:latest
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      # Either key usually works depending on version; pick one:
+      PHOENIX_SQL_DATABASE_URL: postgresql://${POSTGRES_USER:-phoenix}:${POSTGRES_PASSWORD:-phoenix}@db:5432/${POSTGRES_DB:-phoenix}
+      # DATABASE_URL: postgresql://${POSTGRES_USER:-phoenix}:${POSTGRES_PASSWORD:-phoenix}@db:5432/${POSTGRES_DB:-phoenix}
+      PHOENIX_HOST: 0.0.0.0
+      PHOENIX_PORT: 6006
+    ports:
+      - "6006:6006"   # UI
+      - "4317:4317"
